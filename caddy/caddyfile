@@ -1,0 +1,3 @@
+nbs.ms5.me {
+    proxy / localhost:8888
+}
