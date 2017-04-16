@@ -1,3 +1,7 @@
 nbs.ms5.me {
     proxy / localhost:8888
 }
+
+fy.ms5.me {
+    proxy / localhost:8999
+}

@@ -1,0 +1,44 @@
+{
+  "name": "ms_ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev:app": "nodemon -e js,jsx -w src/app -x node_modules/.bin/babel-node --presets=env,stage-0,react src/app/main.js",
+    "dev:web": "babel-node --presets=env,stage-0,react node_modules/.bin/webpack-dev-server --hot --inline --config webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
+    "cors": "^2.8.3",
+    "debug": "^2.6.3",
+    "express": "^4.15.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.2",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "nodemon": "^1.11.0",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
