@@ -1,11 +1,14 @@
 {
-  "name": "ms_ui",
+  "name": "ui",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "",
   "scripts": {
+    "start": "npm run dev:app & npm run dev:web",
     "dev:app": "nodemon -e js,jsx -w src/app -x node_modules/.bin/babel-node --presets=env,stage-0,react src/app/main.js",
-    "dev:web": "babel-node --presets=env,stage-0,react node_modules/.bin/webpack-dev-server --hot --inline --config webpack.config.js"
+    "dev:web": "babel-node --presets=env,stage-0 node_modules/.bin/webpack-dev-server --hot --inline --config wp.web.js",
+    "build:app": "cross-env NODE_ENV=production babel-node --presets=env,stage-0 node_modules/.bin/webpack --optimize-minimize --config wp.app.js",
+    "build:web": "cross-env NODE_ENV=production babel-node --presets=env,stage-0 node_modules/.bin/webpack --optimize-minimize --config wp.web.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +19,7 @@
     "cors": "^2.8.3",
     "debug": "^2.6.3",
     "express": "^4.15.2",
+    "pm2": "^2.4.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
@@ -25,6 +29,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "autoprefixer": "^6.7.7",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.2",
@@ -32,12 +37,20 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^4.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "node-sass": "^4.5.2",
     "nodemon": "^1.11.0",
+    "postcss": "^5.2.17",
+    "postcss-loader": "^1.3.3",
+    "sass-loader": "^6.0.3",
+    "url-loader": "^0.5.8",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.2"
   }

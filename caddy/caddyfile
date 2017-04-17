@@ -2,6 +2,6 @@ nbs.ms5.me {
     proxy / localhost:8888
 }
 
-fy.ms5.me {
+fy.ms5.me, fengyun.cc {
     proxy / localhost:8999
 }

@@ -1,16 +1,17 @@
 package main
 
 import (
-    "log"
-    "net/http"
-    "github.com/meis5/ms5.me/home/routers"
+	"github.com/meis5/ms5.me/home/routers"
+	"log"
+	"net/http"
 )
 
 func main() {
-    mux := http.NewServeMux()
 
-    routers.Routers(mux)
+	mux := http.NewServeMux()
 
-    log.Print("App is listening port :4000")
-    log.Fatal(http.ListenAndServe(":4000", mux))
+	routers.Routers(mux)
+
+	log.Print("App is listening port :4000")
+	log.Fatal(http.ListenAndServe(":4000", mux))
 }

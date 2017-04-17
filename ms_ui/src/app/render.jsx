@@ -20,8 +20,8 @@ export default param => {
     <link href="//${resourcesPath}/normalize/5.0.0/normalize.min.css" rel="stylesheet" />
     <link href="//${resourcesPath}/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     ${isDevelopment ? '<!--' : ''}
-    <link rel="stylesheet" href="//${publicPath}/static/assets/common/common.css">
-    <link rel="stylesheet" href="//${publicPath}/static/assets/index/index.css">
+    <link rel="stylesheet" href="${publicPath}/static/assets/common/common.css">
+    <link rel="stylesheet" href="${publicPath}/static/assets/index/index.css">
     ${isDevelopment ? '-->' : ''}
 </head>
 <body>
