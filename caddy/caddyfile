@@ -5,3 +5,7 @@ nbs.ms5.me {
 fy.ms5.me, fengyun.cc {
     proxy / localhost:8999
 }
+
+ttd2.fengyun.cc {
+    proxy / localhost:8998
+}
