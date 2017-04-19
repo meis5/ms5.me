@@ -11,8 +11,7 @@ nbs.ms5.me {
 }
 
 pbc.ms5.me {
-  root public
-  gzip
+  proxy / localhost:9999
 }
 
 fengyun.cc {
