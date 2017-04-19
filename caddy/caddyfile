@@ -1,9 +1,9 @@
 pub.ms5.me {
-  proxy / localhost:9999
+  proxy / localhost:9995
 }
 
 ui.ms5.me {
-  proxy / localhost:9999
+  proxy / localhost:9995
 }
 
 nbs.ms5.me {
@@ -11,7 +11,7 @@ nbs.ms5.me {
 }
 
 pbc.ms5.me {
-  proxy / localhost:9999
+  proxy / localhost:9995
 }
 
 fengyun.cc {
