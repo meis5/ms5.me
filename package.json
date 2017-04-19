@@ -25,6 +25,7 @@
     "cors": "^2.8.3",
     "debug": "^2.6.3",
     "express": "^4.15.2",
+    "pm2": "^2.4.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
@@ -48,6 +49,7 @@
     "eslint-plugin-react": "^6.10.3",
     "nodemon": "^1.11.0",
     "webpack": "^2.4.1",
+    "webpack-bundle-analyzer": "^2.4.0",
     "webpack-dev-server": "^2.4.2"
   }
 }

@@ -1,6 +1,7 @@
 /* eslint import/no-extraneous-dependencies: off */
 import path from 'path'
 import webpack from 'webpack'
+import webpackBundleAnalyzer from 'webpack-bundle-analyzer'
 
 import conf from './src/conf/conf'
 
@@ -25,14 +26,20 @@ const development = {
     modules: [path.resolve(__dirname, '../src'), lib],
   },
   output: {
-    publicPath: `${publicPath}/static/assets/`,
+    publicPath: `${publicPath}/`,
     filename: '[name]/[name].js',
     path: dst,
   },
-  externals: {},
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    redux: 'Redux',
+    'react-redux': 'ReactRedux',
+    'react-router-dom': 'ReactRouterDom',
+  },
   entry: {
     index: [`${src}/web/index.js`],
-    common: ['react-router-dom'],
+    common: [`${src}/web/components/Header/index.jsx`],
   },
   module: {
     rules: [
@@ -61,6 +68,10 @@ const development = {
       minChunks: Infinity,
     }),
   ],
+}
+
+if (env === 'production') {
+  development.plugins.push(new webpackBundleAnalyzer.BundleAnalyzerPlugin())
 }
 
 const production = Object.assign({}, development, {
