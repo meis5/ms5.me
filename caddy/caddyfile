@@ -10,7 +10,7 @@ nbs.ms5.me {
   root public
 }
 
-pbs.ms5.me {
+pbc.ms5.me {
   root public
   gzip
 }
