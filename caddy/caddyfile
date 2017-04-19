@@ -12,6 +12,10 @@ pub.ms5.me {
 
 }
 
+ui.ms5.me {
+    proxy / localhost:9999
+}
+
 nbs.ms5.me {
     proxy / localhost:8888
 }
