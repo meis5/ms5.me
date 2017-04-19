@@ -9,7 +9,7 @@ const development = {
 
 const production = Object.assign({}, development, {
   port: 9999,
-  publicPath: '//pub.ms5.me/static/ms_ui/assets',
+  publicPath: '//puc.ms5.me/static/ms_ui/assets',
 })
 
 export default { development, production }[env]
