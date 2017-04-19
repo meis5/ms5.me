@@ -7,7 +7,12 @@ ui.ms5.me {
 }
 
 nbs.ms5.me {
-  proxy / localhost:8888
+  root public
+}
+
+pbs.ms5.me {
+  root public
+  gzip
 }
 
 fengyun.cc {
