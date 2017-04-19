@@ -2,10 +2,13 @@ pub.ms5.me {
     root public
     gzip
     cors
+    push / /static/ms_ui/assets/common/common.js /static/ms_ui/assets/index/index.js
+    push /index.html /static/ms_ui/assets/common/common.js /static/ms_ui/assets/index/index.js
 }
 
 ui.ms5.me {
     proxy / localhost:9999
+    push / https://pub.ms5.me/static/ms_ui/assets/index/index.js https://pub.ms5.me/static/ms_ui/assets/common/common.js
 }
 
 nbs.ms5.me {
