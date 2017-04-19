@@ -7,7 +7,7 @@ import conf from './src/conf/conf'
 const { env } = conf
 
 const src = path.resolve(__dirname, './src')
-const lib = path.resolve(__dirname, './node_modules')
+const lib = path.resolve(__dirname, '../node_modules')
 const dst = path.resolve(__dirname, './build')
 
 export default {

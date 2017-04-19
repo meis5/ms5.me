@@ -2,14 +2,14 @@ const env = process.env.NODE_ENV || 'development'
 
 const development = {
   env,
-  port: 4000,
-  publicPath: 'http://localhost:3999',
+  port: 9999,
+  publicPath: 'http://localhost:9998',
   resourcesPath: 'cdn.bootcss.com',
 }
 
 const production = Object.assign({}, development, {
-  port: 3000,
-  publicPath: '',
+  port: 9999,
+  publicPath: '//pub.ms5.me/static/ms_ui/assets',
 })
 
 export default { development, production }[env]

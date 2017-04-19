@@ -1,8 +1,6 @@
 /* eslint import/no-extraneous-dependencies: off */
 import path from 'path'
-import autoprefixer from 'autoprefixer'
 import webpack from 'webpack'
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 import conf from './src/conf/conf'
 
@@ -10,8 +8,8 @@ const { env, port, publicPath } = conf
 const devPort = port - 1
 
 const src = path.resolve(__dirname, './src')
-const lib = path.resolve(__dirname, './node_modules')
-const dst = path.resolve(__dirname, './public/static/assets')
+const lib = path.resolve(__dirname, '../node_modules')
+const dst = path.resolve(__dirname, '../public/static/ms_ui/assets')
 
 const development = {
   devtool: 'eval-cheap-module-source-map',
@@ -39,61 +37,6 @@ const development = {
   module: {
     rules: [
       {
-        test: /\.s?css$/,
-        include: [src, lib],
-        use: env === 'production' ? ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
-              },
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [
-                  autoprefixer,
-                ],
-              },
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: true,
-              },
-            },
-          ],
-        }) : [
-          {
-            loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [
-                autoprefixer,
-              ],
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-        ],
-      },
-      {
         include: src,
         test: /\.jsx?$/,
         use: [
@@ -104,13 +47,6 @@ const development = {
             },
           },
         ],
-      },
-      {
-        test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-        loader: 'url-loader',
-        query: {
-          name: '[path][name].[ext]',
-        },
       },
     ],
   },
@@ -124,7 +60,6 @@ const development = {
       filename: '[name]/[name].js',
       minChunks: Infinity,
     }),
-    new ExtractTextPlugin('[name]/[name].css'),
   ],
 }
 

@@ -1,8 +1,22 @@
+pub.ms5.me {
+    root public
+    gzip
+    cors / {
+        origin            *.ms5.me
+        methods           *
+        allow_credentials false
+        max_age           3600
+        allowed_headers   X-Custom-Header,X-Foobar
+        exposed_headers   X-Something-Special,SomethingElse
+    }
+
+}
+
 nbs.ms5.me {
     proxy / localhost:8888
 }
 
-fy.ms5.me, fengyun.cc {
+fengyun.cc {
     proxy / localhost:8999
 }
 
