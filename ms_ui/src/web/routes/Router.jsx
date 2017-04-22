@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
+
+import styles from '../styles'
+import Navbar from '../components/Navbar'
 
 import HomeRoute from './home'
 import StylesRoute from './styles'
@@ -8,19 +11,27 @@ import ComponentsRoute from './components'
 
 export default class Router extends Component {
   render() {
+    const navbarData = this.props.i18n.value.ui.navbar
     return (
       <div>
-        <ul>
-          <li><Link to="/">home</Link></li>
-          <li><Link to="/styles">Styles</Link></li>
-          <li><Link to="/elements">Elements</Link></li>
-          <li><Link to="/components">Components</Link></li>
-        </ul>
-        <hr />
+        <style dangerouslySetInnerHTML={{ __html: styles }} />
+        <Navbar data={navbarData} />
+        <button
+          onClick={() => {
+            this.props.updateLocale('zh-CN')
+          }}
+        >中文
+        </button>
+        <button
+          onClick={() => {
+            this.props.updateLocale('en-US')
+          }}
+        >英文
+        </button>
         <Route exact path="/" component={HomeRoute} />
-        <Route exact path="/" component={StylesRoute} />
-        <Route path="/about" component={ElementsRoute} />
-        <Route exact path="/" component={ComponentsRoute} />
+        <Route exact path="/styles" component={StylesRoute} />
+        <Route path="/elements" component={ElementsRoute} />
+        <Route exact path="/components" component={ComponentsRoute} />
       </div>
     )
   }

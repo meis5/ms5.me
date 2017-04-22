@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
 
 import app from './modules/app'
+import i18n from './modules/i18n'
 
 const rootReducer = asyncReducers => combineReducers({
   app,
+  i18n,
   ...asyncReducers,
 })
 

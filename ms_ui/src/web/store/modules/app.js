@@ -1,25 +1,20 @@
-export const LOADING_RATIO = 'LOADING_RATIO'
+// Constants
+// --------------------------------------------------
+export const UPDATE_LOADING = 'UPDATE_LOADING'
 
-export const IS_MODAL_SHOW = 'IS_MODAL_SHOW'
-
-export const IS_INFO_SHOW = 'IS_INFO_SHOW'
-export const IS_SUCCESS_SHOW = 'IS_SUCCESS_SHOW'
-export const IS_WARNING_SHOW = 'IS_WARNING_SHOW'
-export const IS_DANGER_SHOW = 'IS_DANGER_SHOW'
-
-export const load = () => ({
-  type: LOADING_RATIO,
-  payload: 0.4,
+// Actions
+// --------------------------------------------------
+export const updateLoading = ratio => ({
+  type: UPDATE_LOADING,
+  payload: ratio,
 })
 
-const initialState = {}
-
-export default (state = initialState, action) => {
+// Reducer
+// --------------------------------------------------
+export default (state = {}, action) => {
   switch (action.type) {
-    case LOADING_RATIO:
-      return state
-    case IS_MODAL_SHOW:
-      return state
+    case UPDATE_LOADING:
+      return { ...state, loading: action.payload }
     default:
       return state
   }

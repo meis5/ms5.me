@@ -1,11 +1,14 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
+import promiseMiddleware from './middlewares/promiseMiddleware'
+
 import createReducer from './reducers'
 
 export default (initialState = {}) => {
   const middleware = [
     thunkMiddleware,
+    promiseMiddleware,
   ]
 
   const enhancers = []

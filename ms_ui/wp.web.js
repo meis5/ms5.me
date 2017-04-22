@@ -31,15 +31,16 @@ const development = {
     path: dst,
   },
   externals: {
+    axios: 'axios',
     react: 'React',
     'react-dom': 'ReactDOM',
     redux: 'Redux',
     'react-redux': 'ReactRedux',
-    'react-router-dom': 'ReactRouterDom',
+    'react-router-dom': 'ReactRouterDOM',
   },
   entry: {
     index: [`${src}/web/index.js`],
-    common: [`${src}/web/components/Header/index.jsx`],
+    common: [`${src}/web/components/Navbar`],
   },
   module: {
     rules: [
