@@ -1,0 +1,13 @@
+{{define "home"}}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{.Title}}</title>
+</head>
+<body>
+<div id=root></div>
+</body>
+<script src={{.Web.assets}}/js/common/common.js?v{{.Meta.version}}></script>
+<script src={{.Web.assets}}/js/index/index.js?v{{.Meta.version}}></script>
+</html>
+{{end}}

@@ -1,0 +1,20 @@
+{{define "register"}}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>梅花注册</title>
+</head>
+<body>
+亲, 注册吧
+
+<form action="/api/register">
+  <input title="邮箱/电话" type="text" placeholder="邮箱/电话" />
+  <button>发送验证码</button>
+  <input title="验证码" type="text" placeholder="验证码" />
+  <input title="账户" type="text" placeholder="账户" />
+  <input title="密码" type="text" placeholder="密码" />
+  <button>注册</button>
+</form>
+</body>
+</html>
+{{end}}

@@ -1,9 +1,4 @@
-import render from './render'
-
-import Root from './Root.jsx'
-
-render(Root)
-
-if (module.hot) {
-  module.hot.accept('./Root.jsx', () => render(Root))
-}
+"use strict";
+exports.__esModule = true;
+var render_1 = require("./render");
+console.log(render_1["default"]);

@@ -1,0 +1,10 @@
+# MS-UI Conf
+
+title = "MS-UI 配置文件"
+version = '1.1.0'
+
+[web]
+[web.development]
+assets = '//localhost:9993/assets'
+[web.production]
+assets = '//pbc.ms5.me/static/assets'

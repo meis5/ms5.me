@@ -1,7 +1,11 @@
 package routers
 
-import "net/http"
+import (
+    "github.com/labstack/echo"
+)
 
-func Routers(mux *http.ServeMux) {
-    homeRouter(mux)
+func MakeRouters(e *echo.Echo) {
+    e.GET("/", homeRouter)
+    e.GET("/login", loginRouter)
+    e.GET("/register", registerRouter)
 }

@@ -4,10 +4,11 @@
   "description": "ms5.me",
   "main": "index.js",
   "scripts": {
-    "dev:ui:app": "nodemon -e js,jsx -w ms_ui/src/app -x node_modules/.bin/babel-node --presets=env,stage-0,react ms_ui/src/app/main.js",
-    "dev:ui:web": "babel-node --presets=env,stage-0 node_modules/.bin/webpack-dev-server --hot --inline --config ms_ui/wp.web.js",
-    "build:ui:app": "NODE_ENV=production babel-node --presets=env,stage-0 node_modules/.bin/webpack --optimize-minimize --config ms_ui/wp.app.js",
-    "build:ui:web": "NODE_ENV=production babel-node --presets=env,stage-0 node_modules/.bin/webpack --optimize-minimize --config ms_ui/wp.web.js"
+    "d:ui": "webpack-dev-server --config ms-ui/webpack.config.js --hot --inline",
+    "d:ui:s": "cd ms-ui && go run main.go",
+    "b:ui": "webpack --config ms-ui/webpack.config.js -p",
+    "b:ui:s": "cd ms-ui && go build main.go",
+    "s:ui": "cd ms-ui && ./main"
   },
   "repository": {
     "type": "git",
@@ -20,20 +21,10 @@
   },
   "homepage": "https://github.com/meis5/ms5.me#readme",
   "dependencies": {
-    "accept-language": "^3.0.15",
     "axios": "^0.16.1",
-    "body-parser": "^1.17.1",
-    "compression": "^1.6.2",
-    "connect-redis": "^3.2.0",
-    "cors": "^2.8.3",
-    "debug": "^2.6.3",
-    "express": "^4.15.2",
-    "express-session": "^1.15.2",
-    "pm2": "^2.4.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
-    "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0"
@@ -41,8 +32,8 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
-    "babel-eslint": "^7.2.2",
-    "babel-loader": "^6.4.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -50,10 +41,13 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
-    "nodemon": "^1.11.0",
-    "webpack": "^2.4.1",
-    "webpack-bundle-analyzer": "^2.4.0",
-    "webpack-dev-server": "^2.4.2"
+    "eslint-plugin-react": "^6.9.0",
+    "flow-bin": "^0.46.0",
+    "fuse-box": "^2.0.0",
+    "lerna": "^2.0.0-rc.5",
+    "typescript": "^2.3.2",
+    "webpack": "^2.5.1",
+    "webpack-bundle-analyzer": "^2.8.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }

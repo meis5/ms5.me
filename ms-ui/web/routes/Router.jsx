@@ -5,6 +5,7 @@ import styles from '../styles'
 import Header from '../components/Header'
 
 
+import HomeRoute from './home'
 import StylesRoute from './styles'
 import ElementsRoute from './elements'
 import ComponentsRoute from './components'
@@ -14,13 +15,15 @@ export default class Router extends React.Component {
     return (
       <div>
         <ul>
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/">首页</Link></li>
+          <li><Link to="/">Homedddddddsfsf</Link></li>
           <li><Link to="/about">About</Link></li>
         </ul>
 
         <hr />
 
-        <Route exact path="/" component={StylesRoute} />
+        <Route exact path="/" component={HomeRoute} />
+        <Route exact path="/styles" component={StylesRoute} />
         <Route path="/about" component={ElementsRoute} />
       </div>
     )
