@@ -1,0 +1,23 @@
+$filter-bg: #585756;
+
+.tab-filter {
+  background-color: $filter-bg;
+  padding: 15px;
+  div {
+    float: left;
+  }
+}
+.tab-filt {
+  cursor: pointer;
+  text-transform: capitalize;
+  background-color: lighten($filter-bg, 20%);
+  border: 1px solid darken($filter-bg, 20%);
+  margin-left: 15px;
+  padding: 5px;
+  text-align: center;
+  min-width: 50px;
+  border-radius: 20px;
+  &.active {
+    background-color: lighten($filter-bg, 50%);
+  }
+}

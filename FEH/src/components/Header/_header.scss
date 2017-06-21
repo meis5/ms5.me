@@ -1,0 +1,23 @@
+.header-navbar {
+  padding: 30px 0;
+  font-size: 14px;
+  span {
+    margin-left: 30px;
+  }
+  a {
+    color: #232425;
+  }
+}
+
+.header-tab-nav {
+  color: #232425;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  border: 3px solid #232425;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 10px 10px 0 0;
+  border-bottom: 0;
+}
+

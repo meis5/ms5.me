@@ -1,0 +1,46 @@
+$agent-item-bg: lighten(yellowgreen, 20%);
+
+.agent-item {
+  background-color: $agent-item-bg;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid #999;
+}
+
+.agent-items {
+  padding: 15px;
+  border: 2px solid #232425;
+  min-height: 600px;
+}
+
+.item-brand {
+  height: 40px;
+  width: 40px;
+  background-color: #888;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.item-info {
+  span {
+    position: relative;
+    &::after {
+      right: 0;
+      top: 5px;
+      width: 1px;
+      height: 12px;
+      content: '';
+      background-color: #999999;
+      position: absolute;
+    }
+    padding: 0 5px;
+    &:first-child {
+      font-weight: 700;
+      padding-right: 30px;
+    }
+    &:last-child::after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "./.babelrc.js",
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ]
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+    },
+    "production": {
+      "presets": [
+        "babili"
+      ]
+    }
+  }
+}
