@@ -44,3 +44,37 @@ $agent-item-bg: lighten(yellowgreen, 20%);
     }
   }
 }
+
+.item-add {
+  a {
+    color: #232425;
+    padding-right: 5px;
+    position: relative;
+    &::after {
+      right: 0;
+      top: 5px;
+      width: 1px;
+      height: 12px;
+      content: '';
+      background-color: #999999;
+      position: absolute;
+    }
+  }
+}
+
+.item-resource-detail {
+  margin-left: 5px;
+  span:last-child {
+    color: red;
+    cursor: pointer;
+    border: 1px solid #999999;
+    display: inline-block;
+    border-radius: 50%;
+    height: 16px;
+    line-height: 16px;
+    width: 16px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 20px;
+  }
+}

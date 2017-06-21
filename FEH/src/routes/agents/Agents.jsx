@@ -45,7 +45,21 @@ export default class C extends PureComponent {
   }
 
   handleAdd = key => () => {
-    console.log(key)
+    const newItems = [...this.state.items]
+    newItems[key].resources.push("sfsadfsf")
+    newItems[key].resources = [...newItems[key].resources]
+    this.setState({
+      items: newItems
+    })
+  }
+
+  handleRemove = (key, value) => () => {
+    const newItems = [...this.state.items]
+    newItems[key].resources.splice(newItems[key].resources.indexOf(value), 1)
+    newItems[key].resources = [...newItems[key].resources]
+    this.setState({
+      items: newItems
+    })
   }
 
   render() {
@@ -69,21 +83,23 @@ export default class C extends PureComponent {
                     </div>
                     <div className="clearfix">
                       <div className="float-left">
-                        <span>
+                        <span className="item-add">
                           <a href="javascript:;" onClick={this.handleAdd(k)}>+ Specify Resources</a>
                           {
                             editing
                               ? (
-                                <div>asdfsaf</div>
-                              )
+                              <div>asdfsaf</div>
+                            )
                               : undefined
                           }
                         </span>
                         {
                           resources.map(v => (
-                            <span key={v}>
-                              {v}s
-                            <span>&times;</span>
+                            <span key={v} className="item-resource-detail">
+                              <span>
+                                {v}s
+                              </span>
+                              <span onClick={this.handleRemove(k, v)}>&times;</span>
                             </span>
                           ))
                         }
